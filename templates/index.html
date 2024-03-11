@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Input Field</title>
+    <style>
+        .input {
+            position: relative;
+            font-size: 1.5em;
+            background: linear-gradient(21deg, #10abff, #1beabd);
+            padding: 20px; /* Increased padding for better visual */
+            border-radius: 30px; /* Increased border radius for a more rounded shape */
+            display: inline-block;
+        }
+
+        .input input {
+            position: relative;
+            border-radius: 25px; /* Rounded corners for the input field */
+            border: none;
+            outline: none;
+            padding: 15px;
+            padding-left: 35px;
+            padding-right: 35px;
+            z-index: 1;
+            width: 300px; /* Adjust the width of the input field */
+            font-size: inherit;
+            color: #2e3750;
+            font-family: inherit;
+        }
+
+        .input button {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #1beabd;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .input button:hover {
+            background-color: #10abff;
+        }
+
+        .input span {
+            transform: scale(.993, .94);
+            transition: transform .5s, opacity .25s;
+            opacity: 0;
+            position: absolute;
+            z-index: 0;
+            margin: 4px;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            box-shadow: inset 0 0 0 3px #fff,
+                0 0 0 4px #fff,
+                3px -3px 30px #1beabd,
+                -3px 3px 30px #10abff;
+        }
+
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.5;
+            font-size: 1em;
+        }
+
+        body {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6; /* Added background color for better contrast */
+        }
+
+        input::placeholder {
+            color: #cbd0d5;
+        }
+
+        html::after {
+            content: '';
+            background: linear-gradient(21deg, #10abff, #1beabd);
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+     <form method="POST" class="input">
+        <input type="text" name="country" placeholder="Enter country name">
+        <button type="submit">Get Info</button>
+    </form>
+</body>
+</html>
